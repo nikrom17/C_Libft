@@ -6,7 +6,7 @@
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 11:41:24 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/25 20:00:29 by nroman           ###   ########.fr       */
+/*   Updated: 2018/02/26 21:27:32 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	ft_putnbr(int nb)
 		ft_putstr("-2147483648");
 		return ;
 	}
-	else if (nb < 0)
+	if (nb < 0)
 	{
 		nb = nb * -1;
 		ft_putchar('-');
 	}
-	else if (nb >= 10)
+	if (nb >= 10)
 	{
 		ft_putnbr(nb / 10);
 		ft_putchar((nb % 10) + '0');
