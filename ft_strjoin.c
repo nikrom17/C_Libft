@@ -6,7 +6,7 @@
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 17:01:58 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/25 20:05:26 by nroman           ###   ########.fr       */
+/*   Updated: 2018/02/27 17:32:06 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = -1;
 	j = -1;
-	if (s1)
+	if (s1 && s2)
 	{
 		i = ft_strlen(s1);
 		j = ft_strlen(s2);

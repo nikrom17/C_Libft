@@ -6,7 +6,7 @@
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 16:21:34 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/24 10:05:36 by nroman           ###   ########.fr       */
+/*   Updated: 2018/02/27 16:29:58 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_strnequ(const char *s1, const char *s2, size_t n)
 	i = 0;
 	if (!s1)
 		return (0);
-	while (i < n)
+	while ((i < n) && s1[i] && s2[i])
 	{
 		if (s1[i] != s2[i])
 			return (0);

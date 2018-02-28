@@ -6,7 +6,7 @@
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 17:53:37 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/25 21:37:09 by nroman           ###   ########.fr       */
+/*   Updated: 2018/02/27 18:10:54 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strtrim(char const *s)
 	while (ft_isnst(s[size]) && size > 0)
 		size--;
 	if (size == 0)
-		return ("");
+		return (ft_strnew(0));
 	i = 0;
 	while (ft_isnst(s[i++]))
 		size--;
