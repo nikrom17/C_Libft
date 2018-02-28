@@ -6,7 +6,7 @@
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 19:34:51 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/27 20:46:43 by nroman           ###   ########.fr       */
+/*   Updated: 2018/02/27 21:05:37 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *str);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dest, const char *src);
-char				*ft_strncpy(char *dest, const char *src, unsigned int n);
+char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, int nb);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
