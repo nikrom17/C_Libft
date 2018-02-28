@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.i                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/22 10:08:50 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/26 09:55:03 by nroman           ###   ########.fr       */
+/*   Updated: 2018/02/27 20:28:26 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int		ft_check_return(unsigned long long num, int neg)
 		return (num * neg);
 }
 
-int				ft_atoi(char *str)
+int				ft_atoi(const char *str)
 {
 	int					i;
 	long long int		num;
