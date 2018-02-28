@@ -6,7 +6,7 @@
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 19:34:51 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/26 22:21:19 by nroman           ###   ########.fr       */
+/*   Updated: 2018/02/27 15:55:34 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ void				ft_bzero(void *b, size_t len);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t len);
 void				*ft_memmove(void *dest, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t len);
+int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t len);
-int					ft_strlen(const char *str);
+unsigned int		ft_strlen(const char *str);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dest, char *src);
 char				*ft_strncpy(char *dest, char *src, unsigned int n);
@@ -84,5 +85,5 @@ int					ft_isnst(int c);
 char				*ft_strrev(char *str);
 int					ft_numlen(int nb);
 int					ft_isempty(const char *str);
-void				ft_lstadd_back(t_list *alst, t_list *new);
+void				ft_lstadd_back(t_list **alst, t_list *new);
 #endif
