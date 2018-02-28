@@ -6,7 +6,7 @@
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 19:34:51 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/27 19:19:52 by nroman           ###   ########.fr       */
+/*   Updated: 2018/02/27 19:40:26 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,17 @@ void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *b, size_t len);
 void				*ft_memcpy(void *restrict dest,
 		const void *restrict src, size_t len);
-void				*ft_memccpy(void *dest, const void *src, int c, size_t len);
+void				*ft_memccpy(void *restrict eest,
+		const void *restrict src, int c, size_t len);
 void				*ft_memmove(void *dest, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t len);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 unsigned int		ft_strlen(const char *str);
 char				*ft_strdup(const char *s1);
-char				*ft_strcpy(char *dest, char *src);
-char				*ft_strncpy(char *dest, char *src, unsigned int n);
-char				*ft_strcat(char *dest, char *src);
-char				*ft_strncat(char *dest, const char *src, int nb);
+char				*ft_strcpy(char *dest, const char *src);
+char				*ft_strncpy(char *dest, const char *src, unsigned int n);
+char				*ft_strcat(char *restrict dest, const char *restrict src);
+char				*ft_strncat(char *restrict eest, const char *restrict src, int nb);
 unsigned int		ft_strlcat(char *dest, char *src, unsigned int size);
 const char			*ft_strchr(const char *s, int c);
 const char			*ft_strrchr(const char *s, int c);

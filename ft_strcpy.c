@@ -6,11 +6,11 @@
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/22 08:55:48 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/22 08:57:42 by nroman           ###   ########.fr       */
+/*   Updated: 2018/02/27 19:33:57 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *const src)
 {
 	int		i;
 
