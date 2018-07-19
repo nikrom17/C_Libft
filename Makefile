@@ -1,4 +1,5 @@
-# **************************************************************************** #
+#
+#**************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,7 +7,7 @@
 #    By: nroman <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/26 10:55:49 by nroman            #+#    #+#              #
-#    Updated: 2018/02/27 15:48:07 by nroman           ###   ########.fr        #
+#    Updated: 2018/03/28 10:25:25 by nroman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,17 +15,17 @@ NAME = libft.a
 CC = gcc
 PATH_SRC = 
 HEADER = includes/
-FLAG = -Wall -Wextra -Werror -Wsign-compare -c
-OPTION = -I $(HEADER) 
+FLAG = -Wall -Wextra -Werror  -c
+OPTION = -I $(HEADER) -g 
 DEPENDENCY = $(PATH_SRC)*.c
 OBJ = *.o
 
 all: $(NAME)
 
 $(NAME): $(DEPENDENCY)
-	$(CC) $(FLAG) $(DEPENDENCY)
+	$(CC) $(OPTION) $(FLAG) $(DEPENDENCY)
 	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+#	ranlib $(NAME)
 
 clean:
 	rm -f $(OBJ)

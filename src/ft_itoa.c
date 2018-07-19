@@ -1,24 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 10:57:42 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/27 19:18:49 by nroman           ###   ########.fr       */
+/*   Created: 2018/02/22 12:54:08 by nroman            #+#    #+#             */
+/*   Updated: 2018/06/18 08:34:23 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *b, size_t len)
+char	*ft_itoa(long long int nb)
 {
-	size_t			i;
-	unsigned char	*cpy;
+	int		i;
+	int		len;
+	char	*res;
 
-	cpy = (unsigned char *)b;
 	i = 0;
-	while (i < len)
-		cpy[i++] = 0;
+	if (nb == 0)
+		return (ft_strdup("0"));
+	if (nb == -2147483648)
+		return (ft_strdup("-2147483648"));
+	len = ft_numlen(nb);
+	res = (char *)malloc(sizeof(char) + len);
+	if (!res)
+		return (NULL);
+	else if (nb < 0)
+	{
+		nb = nb * -1;
+		res[len - 1] = '-';
+	}
+	while (nb > 0)
+	{
+		res[i++] = (nb % 10) + '0';
+		nb /= 10;
+	}
+	res[len] = 0;
+	return (ft_strrev(res));
 }

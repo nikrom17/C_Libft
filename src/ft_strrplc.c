@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strrplc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfranco <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/16 18:54:25 by cfranco           #+#    #+#             */
-/*   Updated: 2018/01/16 18:54:29 by cfranco          ###   ########.fr       */
+/*   Created: 2018/02/22 08:55:48 by nroman            #+#    #+#             */
+/*   Updated: 2018/06/19 22:06:29 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
+char	*ft_strrplc(char *dest, char *const src)
 {
-	int c;
+	int		i;
 
-	c = 0;
-	if (str[c] == '\0')
-		return (1);
-	while (str[c] != '\0')
-	{
-		if (!(str[c] >= 32 && str[c] <= 126))
-			return (0);
-		c++;
-	}
-	return (1);
+	i = -1;
+	while (src[++i] != '\0')
+		dest[i] = src[i];
+	return (dest);
 }

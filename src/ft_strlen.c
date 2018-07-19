@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/26 17:23:53 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/26 22:00:27 by nroman           ###   ########.fr       */
+/*   Created: 2018/02/22 08:51:31 by nroman            #+#    #+#             */
+/*   Updated: 2018/06/04 14:54:07 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+size_t	ft_strlen(const char *str)
 {
-	if (alst && new)
+	int		i;
+
+	i = 0;
+	if (str)
 	{
-		new->next = *alst;
-		*alst = new;
+		while (str[i] != '\0')
+		{
+			i++;
+		}
+		return (i);
 	}
+	else
+		return (0);
 }

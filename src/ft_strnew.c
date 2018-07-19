@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfranco <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/16 16:36:51 by cfranco           #+#    #+#             */
-/*   Updated: 2018/01/16 16:36:53 by cfranco          ###   ########.fr       */
+/*   Created: 2018/02/21 15:25:07 by nroman            #+#    #+#             */
+/*   Updated: 2018/06/21 09:49:13 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_uppercase(char *str)
-{
-	int c;
+#include "libft.h"
 
-	c = 0;
-	if (str[c] == '\0')
-		return (1);
-	while (str[c] != '\0')
+char	*ft_strnew(size_t size, char c)
+{
+	size_t	i;
+	char	*new;
+
+	new = (char *)malloc(sizeof(char) * size + 1);
+	if (new)
 	{
-		if (!(str[c] >= 'A' && str[c] <= 'Z'))
-			return (0);
-		c++;
+		i = 0;
+		while (i < size)
+			new[i++] = c;
+		new[i] = 0;
+		return (new);
 	}
-	return (1);
+	return (NULL);
 }

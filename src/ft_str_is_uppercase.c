@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 14:39:01 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/25 19:53:33 by nroman           ###   ########.fr       */
+/*   Created: 2018/02/28 11:12:23 by nroman            #+#    #+#             */
+/*   Updated: 2018/02/28 11:12:34 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int		ft_str_is_uppercase(char *str)
 {
-	unsigned char	*mem;
-	size_t			i;
+	int c;
 
-	mem = (unsigned char *)malloc(sizeof(mem) * size);
-	if (mem)
+	c = 0;
+	if (str[c] == '\0')
+		return (1);
+	while (str[c] != '\0')
 	{
-		i = 0;
-		while (i < size)
-			mem[i++] = 0;
-		return ((void *)mem);
+		if (!(str[c] >= 'A' && str[c] <= 'Z'))
+			return (0);
+		c++;
 	}
-	return (NULL);
+	return (1);
 }

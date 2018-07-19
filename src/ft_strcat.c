@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 17:01:58 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/27 17:32:06 by nroman           ###   ########.fr       */
+/*   Created: 2018/02/22 09:05:10 by nroman            #+#    #+#             */
+/*   Updated: 2018/06/21 14:23:25 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strcat(char *dest, const char *src)
 {
-	int		i;
-	int		j;
-	char	*dst;
+	int i;
+	int j;
 
-	i = -1;
-	j = -1;
-	if (s1 && s2)
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+		i++;
+	while (src[j] != '\0')
 	{
-		i = ft_strlen(s1);
-		j = ft_strlen(s2);
-		dst = (char *)malloc(sizeof(char) * i + j);
-		if (dst)
-		{
-			i = -1;
-			while (s1[++i])
-				dst[i] = s1[i];
-			j = -1;
-			while (s2[++j])
-				dst[i + j] = s2[j];
-			dst[i + j] = 0;
-			return (dst);
-		}
+		dest[j + i] = src[j];
+		j++;
 	}
-	return (NULL);
+	dest[i + j] = '\0';
+	return (dest);
 }

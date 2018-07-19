@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/22 12:54:08 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/25 19:55:10 by nroman           ###   ########.fr       */
+/*   Created: 2018/02/28 11:11:14 by nroman            #+#    #+#             */
+/*   Updated: 2018/02/28 11:11:47 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int nb)
+int		ft_str_is_alpha(char *str)
 {
-	int		i;
-	int		len;
-	char	*res;
+	int c;
 
-	i = 0;
-	if (nb == 0)
-		return (ft_strdup("0"));
-	if (nb == -2147483648)
-		return (ft_strdup("-2147483648"));
-	len = ft_numlen(nb);
-	res = (char *)malloc(sizeof(char) + len);
-	if (!res)
-		return (NULL);
-	else if (nb < 0)
+	c = 0;
+	if (str[c] == '\0')
+		return (1);
+	while (str[c] != '\0')
 	{
-		nb = nb * -1;
-		res[len - 1] = '-';
+		if (!((str[c] >= 'a' && str[c] <= 'z') ||
+			(str[c] >= 'A' && str[c] <= 'Z')))
+			return (0);
+		c++;
 	}
-	while (nb > 0)
-	{
-		res[i++] = (nb % 10) + '0';
-		nb /= 10;
-	}
-	res[len] = 0;
-	return (ft_strrev(res));
+	return (1);
 }

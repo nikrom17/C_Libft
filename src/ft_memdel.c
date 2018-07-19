@@ -1,42 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 17:53:37 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/27 18:10:54 by nroman           ###   ########.fr       */
+/*   Created: 2018/02/21 15:07:15 by nroman            #+#    #+#             */
+/*   Updated: 2018/03/26 14:24:10 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+void	ft_memdel(void **ap)
 {
-	char	*dst;
-	int		i;
-	int		size;
-	int		j;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	size = ft_strlen(s) - 1;
-	while (ft_isnst(s[size]) && size > 0)
-		size--;
-	if (size == 0)
-		return (ft_strnew(0));
-	i = 0;
-	while (ft_isnst(s[i++]))
-		size--;
-	if ((dst = (char *)malloc(sizeof(char) * (size + 2))))
+	if (ap)
 	{
-		j = 0;
-		while (j < size + 1)
-			dst[j++] = s[i++ - 1];
-		dst[j] = 0;
-		return (dst);
+		free(*ap);
+		*ap = NULL;
 	}
-	return (NULL);
 }

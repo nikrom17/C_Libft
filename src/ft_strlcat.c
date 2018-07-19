@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 16:21:34 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/27 17:26:02 by nroman           ###   ########.fr       */
+/*   Created: 2018/02/22 09:15:11 by nroman            #+#    #+#             */
+/*   Updated: 2018/02/28 11:04:18 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(const char *s1, const char *s2)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	int i;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
-	if (!s1 || !s2)
-		return (0);
-	if (ft_strlen(s1) != ft_strlen(s2))
-		return (0);
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (0);
+	j = 0;
+	while (dest[i] != '\0')
 		i++;
+	if (i < size)
+	{
+		while (src[j] != '\0' && j < (size - i - 1))
+		{
+			dest[j + i] = src[j];
+			j++;
+		}
 	}
-	return (1);
+	if (size != 0 || i < size)
+		dest[i + j] = '\0';
+	if (i > size)
+		return (size + ft_strlen(src));
+	else
+		return (i + ft_strlen(src));
 }

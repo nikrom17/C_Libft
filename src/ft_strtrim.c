@@ -1,29 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 15:25:07 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/24 09:24:28 by nroman           ###   ########.fr       */
+/*   Created: 2018/02/21 17:53:37 by nroman            #+#    #+#             */
+/*   Updated: 2018/05/30 15:10:01 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strtrim(char const *s)
 {
-	size_t	i;
-	char	*new;
+	char	*dst;
+	int		i;
+	int		size;
+	int		j;
 
-	new = (char *)malloc(sizeof(char) * size + 1);
-	if (new)
+	i = 0;
+	if (!s)
+		return (NULL);
+	size = ft_strlen(s) - 1;
+	while (ft_isnst(s[size]) && size > 0)
+		size--;
+	if (size == 0)
+		return (ft_strnew(0, 0));
+	i = 0;
+	while (ft_isnst(s[i++]))
+		size--;
+	if ((dst = (char *)malloc(sizeof(char) * (size + 2))))
 	{
-		i = 0;
-		while (i < (size + 1))
-			new[i++] = 0;
-		return (new);
+		j = 0;
+		while (j < size + 1)
+			dst[j++] = s[i++ - 1];
+		dst[j] = 0;
+		return (dst);
 	}
 	return (NULL);
 }

@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
+/*   ft_is_ptr_eql.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfranco <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/16 16:35:31 by cfranco           #+#    #+#             */
-/*   Updated: 2018/01/16 16:35:34 by cfranco          ###   ########.fr       */
+/*   Created: 2018/03/26 14:41:33 by nroman            #+#    #+#             */
+/*   Updated: 2018/06/20 19:24:54 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_lowercase(char *str)
-{
-	int c;
+#include "libft.h"
 
-	c = 0;
-	if (str[c] == '\0')
-		return (1);
-	while (str[c] != '\0')
-	{
-		if (!(str[c] >= 'a' && str[c] <= 'z'))
-			return (0);
-		c++;
-	}
+int		ft_is_ptr_eql(void *ptr1, void *ptr2)
+{
+	if (ptr1 == ptr2)
+		return (0);
 	return (1);
 }

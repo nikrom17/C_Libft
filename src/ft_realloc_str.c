@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_realloc_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/22 09:05:10 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/27 20:25:17 by nroman           ###   ########.fr       */
+/*   Created: 2018/04/02 16:10:50 by nroman            #+#    #+#             */
+/*   Updated: 2018/05/26 14:28:45 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_realloc_str(char *str, size_t size)
 {
-	int i;
-	int j;
+	char	*new_str;
+	char	*res;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[j] != '\0')
-	{
-		dest[j + i] = src[j];
-		j++;
-	}
-	dest[i + j] = '\0';
-	return (dest);
+	new_str = ft_memalloc(size);
+	res = ft_strjoin(str, new_str);
+	free(str);
+	free(new_str);
+	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 19:34:51 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/27 21:29:30 by nroman           ###   ########.fr       */
+/*   Updated: 2018/06/22 09:49:06 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
-char				*ft_strnew(size_t size);
+char				*ft_strnew(size_t size, char c);
 void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 void				ft_striter(char *s, void (*f)(char *));
@@ -66,7 +66,9 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *str, char c);
-char				*ft_itoa(int n);
+char				*ft_itoa(long long int n);
+char				*ft_itoa_base(long long int n, int base);
+char				*ft_uitoa_base(unsigned long long int n, int base);
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
 void				ft_putendl(char const *str);
@@ -86,4 +88,9 @@ char				*ft_strrev(char *str);
 int					ft_numlen(int nb);
 int					ft_isempty(const char *str);
 void				ft_lstadd_back(t_list **alst, t_list *new);
+void				ft_lst_link_del(t_list **begin_list,
+						void *data_ref, int (*cmp)());
+int					ft_is_ptr_eql(void *ptr1, void *ptr2);
+char				*ft_realloc_str(char *str, size_t size);
+char				*ft_strrplc(char *dest, char *const src);
 #endif

@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfranco <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/16 16:14:08 by cfranco           #+#    #+#             */
-/*   Updated: 2018/01/16 16:14:11 by cfranco          ###   ########.fr       */
+/*   Created: 2018/02/19 10:57:42 by nroman            #+#    #+#             */
+/*   Updated: 2018/03/28 11:37:06 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_alpha(char *str)
-{
-	int c;
+#include "libft.h"
 
-	c = 0;
-	if (str[c] == '\0')
-		return (1);
-	while (str[c] != '\0')
-	{
-		if (!((str[c] >= 'a' && str[c] <= 'z') ||
-			(str[c] >= 'A' && str[c] <= 'Z')))
-			return (0);
-		c++;
-	}
-	return (1);
+void	ft_bzero(void *b, size_t len)
+{
+	size_t			i;
+	unsigned char	*cpy;
+
+	cpy = (unsigned char *)b;
+	i = 0;
+	while (i < len)
+		cpy[i++] = 0;
 }
