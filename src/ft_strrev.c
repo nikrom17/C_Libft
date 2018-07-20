@@ -6,11 +6,11 @@
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/12 20:32:30 by nroman            #+#    #+#             */
-/*   Updated: 2018/02/25 12:31:49 by nroman           ###   ########.fr       */
+/*   Updated: 2018/07/19 17:30:56 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrev(char *str)
+void	ft_strrev(char *str)
 {
 	int size;
 	int i;
@@ -31,5 +31,4 @@ char	*ft_strrev(char *str)
 			i++;
 		}
 	}
-	return (str);
 }

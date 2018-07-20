@@ -6,7 +6,7 @@
 /*   By: nroman <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 19:34:51 by nroman            #+#    #+#             */
-/*   Updated: 2018/06/22 09:49:06 by nroman           ###   ########.fr       */
+/*   Updated: 2018/07/19 17:31:43 by nroman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_isnst(int c);
-char				*ft_strrev(char *str);
+void				ft_strrev(char *str);
 int					ft_numlen(int nb);
 int					ft_isempty(const char *str);
 void				ft_lstadd_back(t_list **alst, t_list *new);
